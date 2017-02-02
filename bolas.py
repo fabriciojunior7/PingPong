@@ -4,8 +4,8 @@ import entidades
 
 class Bola(entidades.Entidade):
 	#Atributos
-	def __init__(self, x, y, largura, altura):
-		entidades.Entidade.__init__(self, x, y, largura, altura)
+	def __init__(self, x, y, largura, altura, cor):
+		entidades.Entidade.__init__(self, x, y, largura, altura, cor)
 		self.velocidadeXMaxima = 5
 		self.velocidadeYMaxima = 3
 		self.velocidadeX = 0

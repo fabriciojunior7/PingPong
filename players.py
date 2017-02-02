@@ -4,8 +4,8 @@ import entidades
 
 class Player(entidades.Entidade):
 	#Atributos
-	def __init__(self, largura, altura, x, y):
-		entidades.Entidade.__init__(self, largura, altura, x, y)
+	def __init__(self, largura, altura, x, y, cor):
+		entidades.Entidade.__init__(self, largura, altura, x, y, cor)
 		self.movimento = [False, False]
 		self.velocidadeX = 3
 

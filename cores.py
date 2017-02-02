@@ -4,4 +4,5 @@ vermelho = (255, 0, 0)
 verde = (0, 255, 0)
 azul = (0, 0, 255)
 
+cinza = (190, 190, 190)
 cinzaClaro = (230, 230, 230)
