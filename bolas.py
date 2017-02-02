@@ -10,12 +10,19 @@ class Bola(entidades.Entidade):
 		self.velocidadeYMaxima = 3
 		self.velocidadeX = 0
 		self.velocidadeY = -3
+		self.xInicial = x
+		self.yInicial = y
 
 	def atualizarPosicao(self, largura, altura):
 		if(self.x < 0 or self.x > (largura - self.largura)):
 			self.velocidadeX *= -1
-		if(self.y < 0 or self.y > (altura - self.altura)):
+		if(self.y < 0):
 			self.velocidadeY *= -1
+		if(self.y > (altura - self.altura)):
+			self.velocidadeY = -3
+			self.velocidadeX = 0
+			self.x = self.xInicial
+			self.y = self.yInicial
 
 		self.x += self.velocidadeX
 		self.y += self.velocidadeY

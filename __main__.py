@@ -22,7 +22,7 @@ bolas = [bolas.Bola((largura/2) - (larguraBola/2), 500, larguraBola, alturaBola,
 larguraPlaca = 35
 alturaPlaca = 15
 alturaMinima = 400
-numPlacas = 10
+numPlacas = 50
 todasAsPlacas = []
 for i in range(numPlacas):
 	x = random.randint(0, (largura - larguraPlaca))
@@ -75,14 +75,19 @@ def atualizarTela():
 	pygame.display.update()
 	relogio.tick(frames)
 	player1.atualizarPosicao(largura, altura)
+
 	for b in bolas:
 		if(b.corpo.colliderect(player1.corpo)):
 			b.colidiu(player1.x, player1.y, player1.largura)
 		b.atualizarPosicao(largura, altura)
 	#Desenhar
 	tela.fill(cores.branco)
-	for e in todasAsPlacas:
-		e.desenhar(tela)
+
+	for p in todasAsPlacas:
+		p.desenhar(tela)
+		if(p.corpo.colliderect(player1.corpo)):
+			p.colidiu()
+
 	player1.desenhar(tela)
 	for b in bolas:
 		b.desenhar(tela)
